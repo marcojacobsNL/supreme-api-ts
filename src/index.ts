@@ -60,16 +60,3 @@ export const getProduct = async (name: string): Promise<GetProductResponse> => {
     throw e;
   }
 };
-
-const fire = async () => {
-  try {
-    const resp: GetProductResponse = await getProduct('Rescue Goggles');
-    if (resp.data) {
-      console.log(resp.data);
-    }
-  } catch (e) {
-    console.log(e);
-  }
-};
-
-fire();
