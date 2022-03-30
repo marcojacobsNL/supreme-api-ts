@@ -31,16 +31,24 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "supreme-ts-api",
+  "name": "supreme-api-ts",
   "author": "Marco Jacobs",
-  "module": "dist/supreme-ts-api.esm.js",
+  "homepage": "https://github.com/fumixia/supreme-api-ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fumixia/supreme-api-ts"
+  },
+  "bugs": {
+    "url": "https://github.com/fumixia/supreme-api-ts/issues"
+  },
+  "module": "dist/supreme-api-ts.esm.js",
   "size-limit": [
     {
-      "path": "dist/supreme-ts-api.cjs.production.min.js",
+      "path": "dist/supreme-api-ts.cjs.production.min.js",
       "limit": "10 KB"
     },
     {
-      "path": "dist/supreme-ts-api.esm.js",
+      "path": "dist/supreme-api-ts.esm.js",
       "limit": "10 KB"
     }
   ],
