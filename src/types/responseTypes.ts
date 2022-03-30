@@ -1,13 +1,13 @@
 import { SupremeAllProductsJSON, SupremeProduct, SupremeProductStyle } from '.';
 
-export interface SupremeApiReturn {
+export interface GetProductsResponse {
   success: boolean;
-  data?: SupremeProductResponseJSON | SupremeProduct | SupremeProduct[];
+  data?: SupremeProduct | SupremeProduct[];
 }
 
 export interface GetProductResponse {
   success: boolean;
-  data?: SupremeProductResponseJSON;
+  data?: SupremeProductResponseCompleteJSON;
 }
 
 export interface SupremeMobileResponseJSON {

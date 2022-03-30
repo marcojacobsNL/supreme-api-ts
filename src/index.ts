@@ -5,7 +5,7 @@ import {
 } from './types';
 import {
   GetProductResponse,
-  SupremeApiReturn,
+  GetProductsResponse,
   SupremeProductResponseCompleteJSON,
 } from './types/responseTypes';
 import {
@@ -20,11 +20,11 @@ import {
  * Get all the Supreme products as a single array without stock and styles. Optionally only return for a specific category.
  * @constructor
  * @param {SupremeCategory | 'all'} category - The optional category of Supreme to only retrieve.
- * @returns {SupremeApiReturn} - Return an array of all the products found on the Supreme website
+ * @returns {GetProductsResponse} - Return an array of all the products found on the Supreme website
  */
 export const getProducts = async (
   category: SupremeCategory | 'all' = 'all'
-): Promise<SupremeApiReturn> => {
+): Promise<GetProductsResponse> => {
   try {
     const products: SupremeAllProductsJSON = await getAllProducts();
     return {
@@ -43,7 +43,7 @@ export const getProducts = async (
  * Get a single Supreme product with all the styles and stock level.
  * @constructor
  * @param {string} name - The name to be searched for.
- * @returns {SupremeApiReturn} - Return the product.
+ * @returns {GetProductResponse} - Return the product.
  */
 export const getProduct = async (name: string): Promise<GetProductResponse> => {
   try {
