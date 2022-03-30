@@ -38,14 +38,16 @@ getProducts(category);
 
 **Example**
 
-    import { getProducts } from 'supreme-api-ts';
+```javascript
+import { getProducts } from 'supreme-api-ts';
 
-    try {
-        const items = await getProducts();
-        console.log(items);
-    } catch (e) {
-        console.error(e);
-    }
+try {
+  const items = await getProducts();
+  console.log(items);
+} catch (e) {
+  console.error(e);
+}
+```
 
 # getProduct
 
@@ -73,11 +75,13 @@ getProduct(name);
 
 **Example**
 
-    import { getProduct } from 'supreme-api-ts';
+```javascript
+import { getProduct } from 'supreme-api-ts';
 
-    try {
-        const item = await getProduct('Box Logo');
-        console.log(item);
-    } catch (e) {
-        console.error(e);
-    }
+try {
+  const item = await getProduct('Box Logo');
+  console.log(item);
+} catch (e) {
+  console.error(e);
+}
+```
