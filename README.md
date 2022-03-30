@@ -19,8 +19,8 @@ Optionally you can provide a category parameter to only receive products from th
 
 **Request**
 
-```http
-getProducts(category)
+```javascript
+getProducts(category);
 ```
 
 | Parameter  | Type              | Description                                                                          |
@@ -44,7 +44,7 @@ getProducts(category)
         const items = await getProducts();
         console.log(items);
     } catch (e) {
-    	console.error(e);
+        console.error(e);
     }
 
 # getProduct
@@ -54,8 +54,8 @@ Optionally you can provide a category parameter to only receive products from th
 
 **Request**
 
-```http
-getProduct(name)
+```javascript
+getProduct(name);
 ```
 
 | Parameter | Type     | Description                                                  |
@@ -79,5 +79,5 @@ getProduct(name)
         const item = await getProduct('Box Logo');
         console.log(item);
     } catch (e) {
-    	console.error(e);
+        console.error(e);
     }
