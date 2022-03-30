@@ -69,7 +69,7 @@ getProduct(name);
 ```javascript
 {
 "success" : boolean,
-"data" : SupremeProductResponseCompleteJSON
+"data" : SupremeProductFull
 }
 ```
 

@@ -6,7 +6,7 @@ import {
 import {
   GetProductResponse,
   GetProductsResponse,
-  SupremeProductResponseCompleteJSON,
+  SupremeProductFull,
 } from './types/responseTypes';
 import {
   findProduct,
@@ -49,9 +49,7 @@ export const getProduct = async (name: string): Promise<GetProductResponse> => {
   try {
     const products: SupremeAllProductsJSON = await getAllProducts();
     const product: SupremeProduct = findProduct(name, products);
-    const apiProduct: SupremeProductResponseCompleteJSON = await getSingleProduct(
-      product
-    );
+    const apiProduct: SupremeProductFull = await getSingleProduct(product);
     return {
       success: true,
       data: apiProduct,

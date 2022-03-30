@@ -7,7 +7,7 @@ export interface GetProductsResponse {
 
 export interface GetProductResponse {
   success: boolean;
-  data?: SupremeProductResponseCompleteJSON;
+  data?: SupremeProductFull;
 }
 
 export interface SupremeMobileResponseJSON {
@@ -34,7 +34,6 @@ export interface SupremeProductResponseJSON {
   russia_blocked: boolean;
 }
 
-export interface SupremeProductResponseCompleteJSON
-  extends SupremeProductResponseJSON {
+export interface SupremeProductFull extends SupremeProductResponseJSON {
   has_stock: boolean;
 }

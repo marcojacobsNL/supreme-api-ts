@@ -7,7 +7,7 @@ import {
 } from '../types';
 import {
   SupremeMobileResponseJSON,
-  SupremeProductResponseCompleteJSON,
+  SupremeProductFull,
   SupremeProductResponseJSON,
 } from '../types/responseTypes';
 import { request } from './request';
@@ -39,11 +39,11 @@ export const getAllProducts = async (): Promise<SupremeAllProductsJSON> => {
  * Get Supreme product specific data from the mobile endpoint.
  * @constructor
  * @param {SupremeProduct} product - The product to get all the data from.
- * @returns {SupremeProductResponseCompleteJSON} - Return the JSON response for the required product.
+ * @returns {SupremeProductFull} - Return the JSON response for the required product.
  */
 export const getSingleProduct = async (
   product: SupremeProduct
-): Promise<SupremeProductResponseCompleteJSON> => {
+): Promise<SupremeProductFull> => {
   try {
     const response: SupremeProductResponseJSON = await request(
       endpoints.product_stock.replace('{PRODUCT_ID}', product.id.toString())
