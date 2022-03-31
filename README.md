@@ -71,9 +71,10 @@ Optionally you can provide a category parameter to only receive products from th
 client.getProduct(name);
 ```
 
-| Parameter | Type     | Description                                                  |
-| :-------- | :------- | :----------------------------------------------------------- |
-| `name`    | `string` | **Required**. The name of the item you wish to look for/get. |
+| Parameter  | Type              | Description                                                  |
+| :--------- | :---------------- | :----------------------------------------------------------- |
+| `name`     | `string`          | **Required**. The name of the item you wish to look for/get. |
+| `category` | `SupremeCategory` | **Optional**. The name of the category you wish to look in.  |
 
 **Response**
 
