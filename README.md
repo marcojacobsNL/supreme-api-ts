@@ -41,8 +41,8 @@ client.getProducts(category);
 
 ```javascript
 {
-	"success" : boolean,
-	"data" : SupremeProduct | SupremeProduct[]
+  "success" : boolean,
+  "data" : SupremeProduct | SupremeProduct[]
 }
 ```
 
@@ -79,8 +79,8 @@ client.getProduct(name);
 
 ```javascript
 {
-	"success" : boolean,
-	"data" : SupremeProductFull
+  "success" : boolean,
+  "data" : SupremeProductFull
 }
 
 ```
