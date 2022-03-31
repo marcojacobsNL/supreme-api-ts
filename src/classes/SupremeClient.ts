@@ -54,11 +54,15 @@ export class SupremeClient {
    * @param {string} name - The name to be searched for.
    * @returns {GetProductResponse} - Return the product.
    */
-  public getProduct = async (name: string): Promise<GetProductResponse> => {
+  public getProduct = async (
+    name: string,
+    category: SupremeCategory | 'all' = 'all'
+  ): Promise<GetProductResponse> => {
     try {
       const products: SupremeAllProductsJSON = await this.supremeUtils.getAllProducts();
       const product: SupremeProduct = this.supremeUtils.findProduct(
         name,
+        category,
         products
       );
       const apiProduct: SupremeProductFull = await this.supremeUtils.getSingleProduct(

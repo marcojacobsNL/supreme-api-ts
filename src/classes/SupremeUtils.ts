@@ -136,16 +136,19 @@ export default class SupremeUtils {
    */
   public findProduct = (
     name: string,
+    category: SupremeCategory | 'all',
     data: SupremeAllProductsJSON
   ): SupremeProduct => {
-    const allProduct = this.flattenCategories(data);
-    const product: SupremeProduct | undefined = allProduct.find(
+    const products: SupremeProduct[] =
+      category === 'all'
+        ? this.flattenCategories(data)
+        : this.getSingleCategory(data, category);
+    const product: SupremeProduct | undefined = products.find(
       (product: SupremeProduct) =>
         product.name.toLowerCase().includes(name.toLowerCase()) ||
         product.name.toLowerCase() === name.toLowerCase()
     );
-    if (!product)
-      throw new Error('Name cannot be found in available products.');
+    if (!product) throw new Error('Name cannot be found.');
     return product;
   };
 
