@@ -2,6 +2,12 @@ export interface HeadersObject {
   [name: string]: string;
 }
 
+export interface Proxy {
+  host: string;
+  port: number;
+  proxyAuth: string;
+}
+
 export type SupremeEndpoint = 'mobile_stock' | 'product_stock';
 
 export type SupremeCategory =
