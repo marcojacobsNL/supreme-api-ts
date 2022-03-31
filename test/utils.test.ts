@@ -1,34 +1,42 @@
-import {
-  findProduct,
-  flattenCategories,
-  getSingleCategory,
-} from '../src/utils/utils';
+import SupremeUtils from '../src/classes/SupremeUtils';
 import {
   FlatSupremeAllProductsJSONMock,
+  ProxyMock,
   SupremeAllProductsJSONMock,
   SupremeMockCategory,
   SupremeMockProduct,
 } from './supremeMockData';
 
 describe('Utils tests', () => {
+  const utils = new SupremeUtils({}, null);
   test('get single category', () => {
     expect(
-      getSingleCategory(SupremeAllProductsJSONMock, 'Accessories')
+      utils.getSingleCategory(SupremeAllProductsJSONMock, 'Accessories')
     ).toEqual(SupremeMockCategory);
   });
   test('flatten category', () => {
-    expect(flattenCategories(SupremeAllProductsJSONMock)).toEqual(
+    expect(utils.flattenCategories(SupremeAllProductsJSONMock)).toEqual(
       FlatSupremeAllProductsJSONMock
     );
   });
   test('find valid product', () => {
-    expect(findProduct('Rescue Goggles', SupremeAllProductsJSONMock)).toEqual(
-      SupremeMockProduct
-    );
+    expect(
+      utils.findProduct('Rescue Goggles', SupremeAllProductsJSONMock)
+    ).toEqual(SupremeMockProduct);
   });
   test('find invalid product', () => {
     expect(() =>
-      findProduct('Invalid', SupremeAllProductsJSONMock)
+      utils.findProduct('Invalid', SupremeAllProductsJSONMock)
     ).toThrowError('Name cannot be found in available products.');
+  });
+  test('format a valid proxy', () => {
+    expect(utils.formatProxy('http://username:password@hostname:123')).toEqual(
+      ProxyMock
+    );
+  });
+  test('format a invalid proxy', () => {
+    expect(() =>
+      utils.formatProxy('http://username112312312password:hostname:123')
+    ).toThrowError();
   });
 });

@@ -1,4 +1,4 @@
-import { SupremeAllProductsJSON, SupremeProduct } from '../src/types';
+import { Proxy, SupremeAllProductsJSON, SupremeProduct } from '../src/types';
 
 export const SupremeMockProduct: SupremeProduct = {
   name: 'Supreme®/The North Face®/Smith<br>Rescue Goggles',
@@ -305,3 +305,9 @@ export const FlatSupremeAllProductsJSONMock: SupremeProduct[] = [
     sale_price_euro: 0,
   },
 ];
+
+export const ProxyMock: Proxy = {
+  host: 'hostname',
+  port: 123,
+  proxyAuth: 'username:password',
+};
