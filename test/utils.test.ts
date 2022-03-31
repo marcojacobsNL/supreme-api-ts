@@ -21,13 +21,13 @@ describe('Utils tests', () => {
   });
   test('find valid product', () => {
     expect(
-      utils.findProduct('Rescue Goggles', SupremeAllProductsJSONMock)
+      utils.findProduct('Rescue Goggles', 'all', SupremeAllProductsJSONMock)
     ).toEqual(SupremeMockProduct);
   });
   test('find invalid product', () => {
     expect(() =>
-      utils.findProduct('Invalid', SupremeAllProductsJSONMock)
-    ).toThrowError('Name cannot be found in available products.');
+      utils.findProduct('Invalid', 'all', SupremeAllProductsJSONMock)
+    ).toThrowError('Name cannot be found.');
   });
   test('format a valid proxy', () => {
     expect(utils.formatProxy('http://username:password@hostname:123')).toEqual(
