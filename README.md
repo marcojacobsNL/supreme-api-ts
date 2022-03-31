@@ -68,7 +68,7 @@ Optionally you can provide a category parameter to only receive products from th
 **Request**
 
 ```javascript
-client.getProduct(name);
+client.getProduct(name, category);
 ```
 
 | Parameter  | Type              | Description                                                  |
